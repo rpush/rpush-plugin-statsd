@@ -1,6 +1,6 @@
 # Rpush::Plugin::Statsd
 
-TODO: Write a gem description
+A plugin that instruments Rpush using the Relfection API and sends stats to StatsD.
 
 ## Installation
 
@@ -18,9 +18,16 @@ Or install it yourself as:
 
     $ gem install rpush-plugin-statsd
 
-## Usage
+## Configuration
 
-TODO: Write usage instructions here
+```
+Rpush.config do |config
+  config.plugin.statsd do |statsd|
+    statsd.host = "127.0.0.1"
+    statsd.port = 9125
+  end
+end
+```
 
 ## Contributing
 
