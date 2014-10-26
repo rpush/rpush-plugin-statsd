@@ -9,6 +9,7 @@ module Rpush
 
       plugin.init do
         @statsd = ::Statsd.new(plugin.config.host, plugin.config.port)
+        @statsd.namespace = 'rpush'
       end
 
       plugin.configure do |config|
@@ -17,6 +18,7 @@ module Rpush
       end
 
       plugin.reflect do |on|
+        on.error(_) { @statsd.increment(:error) }
       end
     end
   end

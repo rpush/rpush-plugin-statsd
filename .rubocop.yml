@@ -1,0 +1,21 @@
+AllCops:
+  Exclude:
+    - lib/generators/**/*
+
+LineLength:
+  Enabled: false
+
+StringLiterals:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+MethodLength:
+  Enabled: false
+
+ClassLength:
+  Enabled: false
+
+CyclomaticComplexity:
+  Enabled: false
