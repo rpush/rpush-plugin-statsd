@@ -1,4 +1,4 @@
-require 'rpush/plugin/statsd/version'
+require 'statsd'
 
 plugin = Rpush.plugin(:statsd)
 plugin.url = 'https://github.com/rpush/rpush-plugin-statsd'
@@ -10,7 +10,7 @@ plugin.configure do |config|
 end
 
 plugin.reflect do |on|
-  on.error(_) { @statsd.increment(:error) }
+  on.error { |_| @statsd.increment(:error) }
 end
 
 plugin.init do
