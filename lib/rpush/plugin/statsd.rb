@@ -9,8 +9,16 @@ plugin.configure do |config|
   config.port = 9125
 end
 
+REFLECTIONS = [:error, :apns_feedback, :notification_enqueued, :notification_delivered,
+ :notification_failed, :notification_id_failed, :notification_will_retry,
+ :notification_id_will_retry, :tcp_connection_lost, :gcm_delivered_to_recipient,
+ :gcm_failed_to_recipient, :gcm_invalid_registration_id, :adm_failed_to_recipient]
+
 plugin.reflect do |on|
-  on.error { |_| @statsd.increment(:error) }
+  REFLECTIONS.each do |reflection|
+    block = -> { @statsd.increment(reflection) }
+    on.send(reflection, &block)
+  end
 end
 
 plugin.init do
