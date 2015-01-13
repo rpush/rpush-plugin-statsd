@@ -5,7 +5,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ian Leitch"]
   spec.email         = ["port001@gmail.com"]
   spec.summary       = 'Rpush plugin for StatsD.'
-  spec.description   = 'Instrument Rpush with StatsD using hooks from the Reflection API.'
+  spec.description   = 'Instrument Rpush with StatsD.'
   spec.homepage      = "https://github.com/rpush/rpush-plugin-statsd"
   spec.license       = "MIT"
 

@@ -1,6 +1,6 @@
 # Rpush::Plugin::Statsd
 
-A plugin that instruments Rpush using the Relfection API and sends stats to StatsD.
+A plugin that instruments Rpush and sends metrics to StatsD.
 
 ## Installation
 
