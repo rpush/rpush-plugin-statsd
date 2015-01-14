@@ -16,7 +16,7 @@ REFLECTIONS = [:error, :apns_feedback, :notification_enqueued, :notification_del
 
 plugin.reflect do |on|
   REFLECTIONS.each do |reflection|
-    block = -> { @statsd.increment(reflection) }
+    block = -> (*args) { @statsd.increment(reflection) }
     on.send(reflection, &block)
   end
 end
