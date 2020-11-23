@@ -20,8 +20,8 @@ Or install it yourself as:
 
 ## Configuration
 
-```
-Rpush.config do |config
+```ruby
+Rpush.config do |config|
   config.plugin.statsd do |statsd|
     statsd.host = "127.0.0.1"
     statsd.port = 9125
